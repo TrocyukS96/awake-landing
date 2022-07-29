@@ -1,0 +1,197 @@
+@import '../../styles/vars.module';
+
+.main {
+  text-align: center;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  z-index: 20;
+
+
+  h1 {
+    margin: 0 auto 67px;
+    position: relative;
+    z-index: 20;
+    font-family: 'DIN Pro';
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: #fff;
+
+    span {
+      background: $goldGradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .textContent {
+    max-width: 442px;
+    position: relative;
+    z-index: 20;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'DIN Pro';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+
+    p {
+      margin: 0;
+      padding: 0;
+
+      &:nth-child(2) {
+        margin: 0 0 25px;
+      }
+    }
+  ;
+  }
+
+  //.leftPhone {
+  //  position: absolute;
+  //  top: 3%;
+  //  left: -90%;
+  //  z-index: 1;
+  //
+  //  img {
+  //    width: 674px;
+  //    height: 727px;
+  //    position: relative;
+  //    transition: all .2s ease;
+  //    z-index: -1;
+  //    //filter: grayscale(100%);
+  //  }
+  //
+  //  .ellipse{
+  //    width: 498px;
+  //    height: 498px;
+  //    position: absolute;
+  //    z-index: 20;
+  //    bottom: 0%;
+  //    top: 65%;
+  //    left: 16%;
+  //    //background: #607449;
+  //    filter: blur(149px);
+  //    transform: matrix(-1, 0, 0, 1, 0, 0);
+  //  }
+  //
+  //  .filterLeftPhone {
+  //
+  //  }
+  //}
+  //
+  //.rightPhone {
+  //  position: absolute;
+  //  top: 12%;
+  //  right: -90%;
+  //
+  //  img {
+  //    width: 674px;
+  //    height: 658px;
+  //  }
+  //  .ellipse{
+  //    width: 498px;
+  //    height: 498px;
+  //    position: absolute;
+  //    z-index: 20;
+  //    bottom: 0%;
+  //    top: 65%;
+  //    left: 16%;
+  //    filter: blur(149px);
+  //    transform: matrix(-1, 0, 0, 1, 0, 0);
+  //  }
+  //  .union{
+  //    position: absolute;
+  //    top: 0;
+  //    left: 0;
+  //    z-index: 20;
+  //    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  //    transform: matrix(-1, 0, 0, 1, 0, 0);
+  //  }
+  //  .filterRightPhone{}
+  //}
+
+  .leftPhone{
+      position: absolute;
+      top: 3%;
+      left: -90%;
+
+    .cycle{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    .ellipse1{
+      position: absolute;
+      bottom: -56%;
+      left: 10%;
+      width: 559px;
+      height: 533px;
+      filter: blur(104px);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+    .ellipse2{
+      position: absolute;
+      top: 0;
+      left: 27%;
+      width: 336px;
+      height: 194px;
+      filter: blur(272px);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+
+    @media screen and (max-width: 1720px) {
+      left: -63%;
+    }
+
+  }
+
+  .rightPhone{
+      position: absolute;
+      top: 12%;
+      right: -90%;
+
+    .cycle{
+      position: absolute;
+      left: 7%;
+      bottom: -1%;
+      z-index: -1;
+    }
+    .ellipse1{
+      position: absolute;
+      bottom: -56%;
+      left: 10%;
+      width: 559px;
+      height: 533px;
+      filter: blur(104px);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+    .ellipse2{
+      position: absolute;
+      top: 0;
+      left: 27%;
+      width: 336px;
+      height: 194px;
+      filter: blur(272px);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+    @media screen and (max-width: 1720px) {
+      right: -63%;
+    }
+  }
+  .rightPhone,.leftPhone{
+    @media screen and (max-width: 1120px) {
+      display: none;
+    }
+  }
+
+  img,div {
+    transition: all .3s ease;
+  }
+}
+
