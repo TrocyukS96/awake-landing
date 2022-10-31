@@ -1,9 +1,18 @@
 .wrapper{
-  margin: 100px auto 0px;
-  padding-bottom: 24px;
-  overflow: hidden;
+  max-width: 140px;
+  margin: 98px auto 0;
   display: flex;
+  position: relative;
+  z-index: 2000;
+  overflow: hidden;
+  gap: 29px;
   justify-content: center;
   align-items: center;
-  gap: 29px;
+
+ @media screen and (max-width: 1600px) {
+   margin: 60px auto 0;
+ }
+  @media screen and (max-width: 1200px) {
+    margin: 45px auto 0;
+  }
 }

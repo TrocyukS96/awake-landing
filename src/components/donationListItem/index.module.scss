@@ -1,0 +1,27 @@
+.item {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 43px;
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+
+  .column {
+    font-family: 'DIN Pro regular', sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+
+    .orderNumber, .amount {
+      margin-right: 5px;
+      color: #F5C463;
+
+    }
+
+    .description, .currency {
+      color: #fff;
+    }
+  }
+}

@@ -1,13 +1,27 @@
 import s from './index.module.scss';
-import {useState} from "react";
+import {motion} from 'framer-motion';
+import {useRouter} from "next/router";
+
+const routs = [
+    {name: 'ГЛАВНАЯ', path: '/'},
+    {name: 'АНТИЧИТ', path: '/antiCheat'},
+    {name: 'СБОРКА GTA', path: '/installation'},
+    {name: 'ДОНАТ', path: '/donation'},
+    {name: 'ДИСКОРД', path: 'https://discord.gg/dpfYpf2'},
+]
+
 export const Navbar = () => {
+    const router = useRouter()
+
     return (
-        <ul className={s.list}>
-            <li className={s.item} onClick={()=>{}}>ГЛАВНАЯ</li>
-            <li className={`${s.item} ${s.activeItem}`} onClick={()=>{}}>АНТИЧИТ</li>
-            <li className={s.item} onClick={()=>{}}>СБОРКА GTA</li>
-            <li className={s.item} onClick={()=>{}}>ДОНАТ</li>
-            <li className={s.item} onClick={()=>{}}>ДИСКОРД</li>
-        </ul>
+        <div className={s.wrapper}>
+            <ul className={s.list}>
+                {routs.map((route, index) => {
+                    return <motion.li  key={index} className={router.pathname === route.path
+                        ? ` ${s.item} ${s.activeItem}` : s.item} onClick={()=>router.push(route.path)}>{route.name}
+                    </motion.li>
+                })}
+            </ul>
+        </div>
     )
 }

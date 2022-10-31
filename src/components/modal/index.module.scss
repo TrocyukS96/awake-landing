@@ -1,0 +1,63 @@
+@import "/styles/mixins";
+@import "/styles/vars.module";
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  z-index: 999999999999;
+  top: 0;
+  left: 0;
+  @include toCenterByFlex();
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s ease;
+  transform: scale(1);
+  
+  .content {
+    border-radius: 12px;
+    transition: all .3s ease;
+
+    .cancelBtn {
+      margin: 0;
+      width: 42px;
+      height: 42px;
+
+      position: absolute;
+      top: 30px;
+      right: 30px;
+
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #607B96;
+      border-radius: 3px;
+
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 18px;
+      color:black;
+      transition: $btnTransition;
+
+      &:hover{
+        border-color: #fff;
+      }
+
+      @media screen and (max-width: 790px) {
+        right: 20px;
+        top: 20px;
+      }
+      svg{
+        transform: translateY(2px);
+      }
+    }
+  }
+}
+
+.modalActive {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.contentActive {
+  transform: scale(1);
+}

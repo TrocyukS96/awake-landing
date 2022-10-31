@@ -1,34 +1,63 @@
-.list{
-  max-width: 1270px;
-  margin: 24px auto 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 70px;
-  list-style: none;
+@import "/styles/mixins";
+.wrapper {
+  font-family: 'DIN Pro bold';
+  margin: 10px 0 0;
+  @include toCenterByFlex();
 
-  .item{
-    font-family: 'DIN Pro';
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    color: rgba(255, 255, 255, 0.7);
-    cursor: pointer;
+  @media screen and (max-width: 640px) {
+    margin-top: 0;
   }
 
-  .activeItem{
-    color:#fff;
-    position: relative;
+  .list {
+    height: 64px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    list-style: none;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space:nowrap;
+    scrollbar-width:none;
+    font-family: 'DIN Pro bold',sans-serif;
 
-    &::before{
-      content:'';
-      width: 24px;
-      height: 2px;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      background: white;
-      transform: translate(-50%,2px);
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+
+    @media screen and (max-width: 1200px) {
+      gap: 50px;
+    }
+    @media screen and (max-width: 640px) {
+      gap: 40px;
+    }
+
+    .item {
+      display: inline-block;
+      font-family: 'DIN Pro bold',sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+      color: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+    }
+
+    .activeItem {
+      color: #fff;
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 24px;
+        height: 2px;
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        background: white;
+        transform: translate(-50%, 2px);
+      }
     }
   }
 }

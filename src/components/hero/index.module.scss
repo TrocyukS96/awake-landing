@@ -1,4 +1,5 @@
-@import '../../styles/vars.module';
+@import '../../../styles/vars.module';
+@import '../../../styles/fonts';
 
 .main {
   text-align: center;
@@ -7,37 +8,78 @@
   margin: 0 auto;
   z-index: 20;
 
-
   h1 {
-    margin: 0 auto 67px;
+    margin: 0 auto 50px;
+    padding: $textPadding;
     position: relative;
     z-index: 20;
-    font-family: 'DIN Pro';
-    font-weight: 700;
+    font-family: 'DIN Pro bold', sans-serif;
     font-size: 32px;
     line-height: 40px;
     text-transform: uppercase;
-    color: #fff;
+    color: $whiteColor;
+
+    @media screen and (max-width: 1600px) {
+      margin: 0 auto 40px;
+      font-size: 25px;
+      line-height: 28px;
+    }
+    @media screen and (max-width: 1300px) {
+      margin: 0 auto 30px;
+      max-width: 440px;
+      font-size: 25px;
+      line-height: 28px;
+    }
 
     span {
       background: $goldGradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+
+    @media screen and (max-width: 430px) {
+      line-height: 30px;
+    }
+    @media screen and (max-width: 400px) {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 
   .textContent {
-    max-width: 442px;
+    max-width: 360px;
     position: relative;
     z-index: 20;
     margin: 0 auto;
     text-align: center;
-    font-family: 'DIN Pro';
-    font-weight: 500;
+    font-family: 'DIN Pro medium', sans-serif;
     font-size: 16px;
     line-height: 20px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.5);
+
+    @media screen and (max-width: 1600px) {
+      height: 122px;
+      overflow-y: auto;
+      -ms-overflow-y: auto;
+      scrollbar-width: 10px;
+      scrollbar-color: transparent transparent;
+
+      &::-webkit-scrollbar {
+        width: 10px;
+        height: 0px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: transparent;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      max-width: 226px;
+      height: 100px;
+    }
+
 
     p {
       margin: 0;
@@ -45,153 +87,182 @@
 
       &:nth-child(2) {
         margin: 0 0 25px;
+
+        @media screen and (max-width: 1600px) {
+          margin: 0 0 5px;
+        }
       }
     }
-  ;
+
   }
 
-  //.leftPhone {
-  //  position: absolute;
-  //  top: 3%;
-  //  left: -90%;
-  //  z-index: 1;
-  //
-  //  img {
-  //    width: 674px;
-  //    height: 727px;
-  //    position: relative;
-  //    transition: all .2s ease;
-  //    z-index: -1;
-  //    //filter: grayscale(100%);
-  //  }
-  //
-  //  .ellipse{
-  //    width: 498px;
-  //    height: 498px;
-  //    position: absolute;
-  //    z-index: 20;
-  //    bottom: 0%;
-  //    top: 65%;
-  //    left: 16%;
-  //    //background: #607449;
-  //    filter: blur(149px);
-  //    transform: matrix(-1, 0, 0, 1, 0, 0);
-  //  }
-  //
-  //  .filterLeftPhone {
-  //
-  //  }
-  //}
-  //
-  //.rightPhone {
-  //  position: absolute;
-  //  top: 12%;
-  //  right: -90%;
-  //
-  //  img {
-  //    width: 674px;
-  //    height: 658px;
-  //  }
-  //  .ellipse{
-  //    width: 498px;
-  //    height: 498px;
-  //    position: absolute;
-  //    z-index: 20;
-  //    bottom: 0%;
-  //    top: 65%;
-  //    left: 16%;
-  //    filter: blur(149px);
-  //    transform: matrix(-1, 0, 0, 1, 0, 0);
-  //  }
-  //  .union{
-  //    position: absolute;
-  //    top: 0;
-  //    left: 0;
-  //    z-index: 20;
-  //    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
-  //    transform: matrix(-1, 0, 0, 1, 0, 0);
-  //  }
-  //  .filterRightPhone{}
-  //}
+  .phones {
+    width: 2230px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    bottom: -4%;
+    left: 56%;
+    transform: translateX(-50%);
 
-  .leftPhone{
-      position: absolute;
-      top: 3%;
-      left: -90%;
-
-    .cycle{
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      z-index: -1;
+    @media screen and (max-width: 1600px) {
+      left: 59%;
+      transform: translateX(-51%);
+      height: 600px;
+      width: 1600px;
+    }
+    @media screen and (max-width: 1300px) {
+      left: 59%;
+      transform: translateX(-51%);
+      height: 600px;
+      width: 1500px;
+    }
+    @media screen and (max-width: 1000px) {
+      left: 53%;
+      transform: translateX(-51%);
+      width: 1178px;
+    }
+    @media screen and (max-width: 640px) {
+      left: 51%;
+      transform: translateX(-51%);
+      width: 1073px;
     }
 
-    .ellipse1{
-      position: absolute;
-      bottom: -56%;
-      left: 10%;
-      width: 559px;
-      height: 533px;
-      filter: blur(104px);
-      transform: matrix(-1, 0, 0, 1, 0, 0);
-    }
-    .ellipse2{
-      position: absolute;
-      top: 0;
-      left: 27%;
-      width: 336px;
-      height: 194px;
-      filter: blur(272px);
-      transform: matrix(-1, 0, 0, 1, 0, 0);
-    }
+    .leftPhone {
+      position: relative;
+      cursor: pointer;
+      @media screen and (max-width: 1600px) {
+        width: 530px;
+      }
 
-    @media screen and (max-width: 1720px) {
-      left: -63%;
+      @media screen and (max-width: 480px) {
+        transform: translateX(70px);
+      }
+      transition: all .2s ease;
+
+      .cycle {
+        position: absolute;
+        left: 18%;
+        bottom: 0;
+        z-index: -1;
+        transition: all 0.3s ease;
+        @media screen and (max-width: 1600px) {
+          position: absolute;
+          left: -3%;
+          bottom: 1px;
+          z-index: -1;
+          width: 540px;
+        }
+        @media screen and (max-width: 480px) {
+          left: -25%;
+          bottom: 2px;
+          z-index: -1;
+          width: 590px;
+        }
+
+      }
+
+      .ellipse1 {
+        position: absolute;
+        bottom: -42%;
+        left: 26%;
+        width: 498px;
+        height: 498px;
+        background: #607449;
+        filter: blur(144px);
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+
+        @media screen and (max-width: 1600px) {
+          left: 4%;
+        }
+      }
+
+      .ellipse2 {
+        position: absolute;
+        top: 12%;
+        left: 32%;
+        width: 194px;
+        height: 194px;
+        background: #607449;
+        filter: blur(1100px);
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+        z-index: -1;
+      }
     }
 
   }
 
-  .rightPhone{
-      position: absolute;
-      top: 12%;
-      right: -90%;
+  .rightPhone {
+    position: relative;
+    top: 9%;
+    width: 674px;
+    height: 658px;
+    transition: all .2s ease;
+    cursor: pointer;
 
-    .cycle{
+    @media screen and (max-width: 1600px) {
+      width: 530px;
+    }
+
+    @media screen and (max-width: 480px) {
+      transform: translateX(-70px);
+    }
+
+    .cycle {
       position: absolute;
       left: 7%;
       bottom: -1%;
       z-index: -1;
+      transition: all .3s ease;
+      @media screen and (max-width: 1600px) {
+        left: 4%;
+        bottom: 8%;
+        z-index: -1;
+        width: 540px;
+      }
+      @media screen and (max-width: 480px) {
+        left: 17%;
+        bottom: 8%;
+        z-index: -1;
+        width: 590px;
+      }
+
     }
-    .ellipse1{
+
+
+    .ellipse1 {
       position: absolute;
-      bottom: -56%;
-      left: 10%;
-      width: 559px;
-      height: 533px;
-      filter: blur(104px);
-      transform: matrix(-1, 0, 0, 1, 0, 0);
+      bottom: -40%;
+      left: 14%;
+      width: 498px;
+      height: 498px;
+      background: #AA4794;
+      filter: blur(144px);
+
+      @media screen and (max-width: 1600px) {
+        left: 4%;
+      }
+
     }
-    .ellipse2{
+
+    .ellipse2 {
       position: absolute;
-      top: 0;
-      left: 27%;
-      width: 336px;
+      top: 10%;
+      left: 32%;
+      width: 194px;
       height: 194px;
-      filter: blur(272px);
-      transform: matrix(-1, 0, 0, 1, 0, 0);
+      background: #AA4794;
+      filter: blur(1100px);
+      //opacity: 0.6;
+      z-index: -1;
     }
-    @media screen and (max-width: 1720px) {
-      right: -63%;
-    }
+
   }
-  .rightPhone,.leftPhone{
-    @media screen and (max-width: 1120px) {
-      display: none;
-    }
+  .hoverClass{
+
   }
 
-  img,div {
-    transition: all .3s ease;
-  }
 }
+
+
 

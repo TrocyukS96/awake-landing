@@ -1,0 +1,5 @@
+@mixin toCenterByFlex(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

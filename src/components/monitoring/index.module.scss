@@ -1,15 +1,27 @@
 .block {
+  max-width: 300px;
+  margin: 0 auto;
   .title {
     max-width: 258px;
-    margin: 48px auto 0;
+    margin: 44px auto 18px;
 
-    font-family: 'DIN Pro';
+    font-family: 'DIN Pro black',sans-serif;
     text-align: center;
-    font-weight: 900;
     font-size: 25px;
     line-height: 31px;
     color: #fff;
+    position: relative;
+    z-index: 20;
 
+    @media screen and (max-width: 16300px) {
+      margin: 30px auto 18px;
+    }
+    @media screen and (max-width: 1300px) {
+      margin: 25px auto 18px;
+    }
+    @media screen and (max-width: 480px) {
+      margin: 40px auto 6%;
+    }
     span {
       position: relative;
 
@@ -18,25 +30,46 @@
         position: absolute;
         left: -28%;
         top: 5%;
-        font-weight: 900;
+        font-family: 'DIN Pro black',sans-serif;
         font-size: 39px;
         line-height: 49px;
         color: transparent;
         -webkit-text-stroke: 0.01em rgba(255, 255, 255, 0.1);
+
+        @media screen and (max-width: 1200px) {
+          left: -16%;
+          top: -5%;
+          font-family: "DIN Pro black",sans-serif;
+          font-size: 32px;
+        }
+
       }
     }
+
   }
 
   .countBlock {
-    margin: 32px 0 0;
+    //margin: 3% 0 0;
     text-align: center;
-
-    font-family: 'DIN Pro';
-    font-style: normal;
-    font-weight: 900;
+    font-family: 'DIN Pro black',sans-serif;
     font-size: 43px;
     line-height: 54px;
     color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    z-index: 20;
+
+    @media screen and (max-width: 1300px) {
+      font-size: 30px;
+    }
+
+    .icon{
+      width: 34px;
+      height: 38px;
+      @media screen and (max-width: 1300px) {
+        width: 25px;
+        height: 28px;
+      }
+    }
 
     .currentItem {
       margin: 0 8px 0 0;

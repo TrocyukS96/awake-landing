@@ -1,0 +1,390 @@
+@import "/styles/vars.module";
+@import "./styles/fonts";
+.donation {
+
+  position: relative;
+
+  input{
+    font-family: 'DIN Pro medium',sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; // Yeah, yeah everybody write about it
+  }
+
+  input[type='number'],
+  input[type="number"]:hover,
+  input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+  }
+  .title {
+    margin: 0 auto 50px;
+    max-width: 470px;
+    padding: $textPadding;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    font-family: 'DIN Pro bold', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: $whiteColor;
+    text-align: center;
+
+    @media screen and (max-width: 1600px) {
+      margin: 0 auto 40px;
+      font-size: 25px;
+      line-height: 28px;
+    }
+    @media screen and (max-width: 1300px) {
+      margin: 0 auto 30px;
+      font-size: 25px;
+      line-height: 28px;
+    }
+    @media screen and (max-width: 600px) {
+      margin: 0 auto 20px;
+    }
+
+    span {
+      background: $goldGradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .content {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+    padding: $textPadding;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+
+    @media screen and (max-width: 887px) {
+      gap: 15px;
+    }
+    @media screen and (max-width: 600px) {
+      gap: 30px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .text {
+      max-width: 442px;
+      font-family: 'DIN Pro medium', sans-serif;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 24px;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: left;
+      position: relative;
+      z-index: 3;
+
+      @media screen and (max-width: 600px) {
+        max-width: 360px;
+        text-align: center;
+      }
+      @media screen and (max-width: 600px) {
+        color:$whiteColor;
+      }
+    }
+
+    .inputsBlock {
+      max-width: 322px;
+
+      display: grid;
+      grid-template-columns: 155px 155px;
+      grid-template-rows: 62px 62px 43px 43px;
+      grid-column-gap: 12px;
+      -moz-column-gap: 12px;
+      column-gap: 12px;
+      grid-row-gap: 15px;
+      row-gap: 15px;
+      grid-template-areas:
+        "a a"
+        "b c"
+        "d d"
+        "e e";
+      position: relative;
+      z-index: 3;
+      .inputWrap {
+
+        @media screen and (max-width: 400px) {
+          row-gap: 10px;
+        }
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        position: relative;
+        text-align: left;
+        z-index: 3;
+        .label {
+          font-family: 'DIN Pro medium', sans-serif;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 15px;
+          color: rgba(255, 255, 255, 0.7);
+        }
+
+        input {
+          padding: 0 45px 0 22px;
+          height: 45px;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 10px;
+          outline: none;
+          font-family: 'DIN Pro medium',sans-serif;
+          font-size: 19px;
+          line-height: 24px;
+          &::placeholder{
+            font-family: 'DIN Pro medium',sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: rgba(255, 255, 255, 0.7);
+          }
+
+
+        }
+
+        .iconWrap {
+          height: 43px;
+          width: 44px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 66%;
+          right: 0%;
+          transform: translateY(-50%);
+          background: #3C3C3C;
+          border-radius: 10px;
+
+          @media screen and (max-width: 400px) {
+            height: 38px;
+            width: 38px;
+            top: 70%;
+          }
+        }
+
+        &:nth-child(1) {
+          grid-area: a;
+        }
+
+        &:nth-child(2) {
+          grid-area: b;
+        }
+
+        &:nth-child(3) {
+          grid-area: c;
+
+          input, .desiredAmountBlock {
+            background: rgba(245, 196, 99, 0.1);
+            border-color: #F5C463;
+            color:#F5C463;
+          }
+
+          .label {
+            color: #F5C463;
+          }
+
+          .iconWrap {
+            background: #F5C463;
+            color:$whiteColor;
+            font-size: 19px;
+          }
+        }
+        .desiredAmountBlock{
+          padding: 0 45px 0 22px;
+          display: flex;
+          align-items: center;
+          height: 45px;
+          background: rgba(245, 196, 99, 0.1);
+          border:1px solid #F5C463;
+          border-radius: 10px;
+          font-size: 19px;
+
+          font-family: 'DIN Pro medium',sans-serif;
+          font-size: 19px;
+          line-height: 24px;
+
+          -moz-user-select: none;
+          -khtml-user-select: none;
+          -webkit-user-select: none;
+        }
+        &:first-child{
+          position: relative;
+        }
+      }
+
+      .infoBtn {
+        grid-area: d;
+        margin: 0;
+        padding: 13px 0 12px;
+        height: 43px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        background: transparent;
+        font-family: 'DIN Pro bold',sans-serif;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        color: #FFFFFF;
+        transition: $btnTransition;
+        position: relative;
+        z-index: 3;
+
+        &:hover {
+          opacity: 0.6;
+        }
+        &:active{
+          transform: scale(0.9);
+        }
+      }
+
+      .convertBtn {
+        margin: 0;
+        grid-area: e;
+
+        height: 43px;
+        background: #F5C463;
+        border-radius: 10px;
+        font-family: 'DIN Pro bold',sans-serif;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        color: #FFFFFF;
+        transition: $btnTransition;
+        border-style: none;
+        position: relative;
+        z-index: 3;
+        &:hover, &:disabled {
+          opacity: 0.6;
+        }
+        &:active{
+          transform: scale(0.9);
+        }
+      }
+    }
+
+@media screen and (max-width: 400px) {
+  gap: 10px;
+}
+  }
+  .phones {
+    max-width: 1710px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    position: fixed;
+    z-index: 0;
+    bottom: 0;
+    left: 44%;
+    transform: translateX(-54%);
+    height: 540px;
+    @media screen and (max-width: 1100px) {
+      left: 42%;
+    }
+    @media screen and (max-width: 887px) {
+      left: 41%;
+    }
+    @media screen and (max-width: 760px) {
+      left: 40%;
+    }
+    @media screen and (max-width: 660px) {
+      left: 39%;
+    }
+
+    .leftPhone {
+      width: 900px;
+      transform: translate(37%,7%);
+
+      @media screen and (max-width: 540px) {
+        transform: translate(40%,7%);
+      }
+      @media screen and (max-width: 440px) {
+        transform: translate(43%,7%);
+      }
+
+      .points{
+        position: absolute;
+        width: 974px;
+        height: 500px;
+        z-index: -1;
+        bottom: 89px;
+        left: -7%;
+        transform: translate(1%, 1%);
+
+        @media screen and (max-width: 800px) {
+          display: none;
+        }
+
+
+      }
+
+    }
+
+    .rightPhone {
+      width: 900px;
+      position: relative;
+      transform: translate(-13%,0%);
+      @media  screen and (max-width: 800px) {
+        transform: translate(-16%, 0%);
+      }
+
+      @media screen and (max-width: 540px) {
+        transform: translate(-21%, 0%);
+      }
+      @media screen and (max-width: 440px) {
+        transform: translate(-24%, 0%);
+      }
+
+    }
+    .ellipse{
+      width: 650px;
+      height: 846px;
+      position: fixed;
+      z-index: 0;
+      left: 39%;
+      top: 86%;
+      background: #F5C363;
+      filter: blur(360px);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+    .waveWrap{
+      position: absolute;
+      width: 3923.76px;
+      height: 893.02px;
+      /* left: 2578.62px; */
+      top: -76%;
+      left: -39%;
+      z-index: -1;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      transform: rotate(4deg);
+    }
+
+    svg{
+      position: absolute;
+      z-index: -1;
+      bottom: -16%;
+    }
+  }
+
+  .error{
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    font-family: "DIN Pro bold", sans-serif;
+    font-size: 12px;
+    line-height: 8px;
+    color: red;
+  }
+
+}

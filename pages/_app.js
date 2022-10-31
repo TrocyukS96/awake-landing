@@ -1,10 +1,21 @@
 import MainLayout from "../src/components/MainLayout";
-import Head from "next/head";
+import {motion} from 'framer-motion';
 
-export default function MyApp({Component, pageProps}) {
+import './../styles/scrollbar.css';
+export default function MyApp({Component, pageProps, router}) {
     return (
-        <MainLayout>
-            <Component {...pageProps} />
-        </MainLayout>
+
+        <motion.div key={router.route}
+                    transition={{ duration:1 }}
+                    initial={{opacity: 0.89}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+
+        >
+            <MainLayout>
+                <Component {...pageProps} />
+            </MainLayout>
+        </motion.div>
+
     )
 }

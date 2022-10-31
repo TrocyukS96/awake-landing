@@ -1,9 +1,13 @@
+@import "/styles/mixins";
+
 .container {
-  margin: 20px auto 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 6px auto 0;
+  @include toCenterByFlex();
   width: 290px;
+
+  @media screen and (max-width: 1300px) {
+    margin: 3px auto 0;
+  }
 
   .inner {
     width: 80%;
@@ -13,24 +17,23 @@
     overflow: hidden;
     transition: all 0.5s;
     will-change: transform;
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
 
+    @media screen and (max-width: 1200px) {
+      width: 70%;
+    }
     .progressBar {
       position: absolute;
       height: 100%;
       width: 100%;
       content: "";
-
       top: 0;
       bottom: 0;
       right: 100%;
       transform: translateX(0%);
       border-radius: inherit;
       background: white;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include toCenterByFlex();
       color: white;
       font-family: sans-serif;
 

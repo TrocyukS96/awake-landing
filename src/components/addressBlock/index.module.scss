@@ -1,0 +1,22 @@
+@import "/styles/mixins";
+@import "/styles/vars.module";
+.wrapper{
+  position: relative;
+  z-index: 20;
+  width: 170px;
+  margin: 21px auto 0;
+  @include toCenterByFlex();
+
+
+  .clipboard{
+    background: transparent;
+    border-style: none;
+    font-family: 'DIN Pro bold',sans-serif;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    color:$whiteColor;
+  }
+}
